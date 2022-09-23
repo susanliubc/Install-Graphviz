@@ -1,0 +1,44 @@
+Installtion of Graphviz on Mac M1
+
+Note: graphviz is a open source software for graph drawing. In particular, make graphs in decision tree in machine learning.
+
+Steps tried but not working:
+
+1. Install it directly using conda install graphviz / pip install graphviz
+2. Go to Anaconda navigator to download
+3. conda install python-graphviz
+
+Search alternative methods:
+
+1. Homebrew install graphviz:
+	. Install homebrew:
+		.Copy and paste /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" to terminal
+		.Copy and paste eval "$(/opt/homebrew/bin/brew shellenv)" to make brew comman available indside the terminal.
+		. brew install graphviz
+2. Find the path of graphviz and update enviroment variable
+	. Check if graphviz is installed and version
+	dot -V
+	. Check path
+	which dot
+	. Update environment variable
+	vi ~/bash_profile
+	export PATH=/opt/homebrew/bin/dot:$PATH"
+   	source .bash_profile
+
+Now graphviz is installed properly, but Anaconda doesn't have this module.
+
+Tried the following two command again, which took longer time and don't work.
+
+1. conda install graphviz
+2. conda install -c conda-forge python-graphviz (this command took overnight)
+
+Final solution:
+
+pip install graphviz
+
+Anaconda eventurally import this module.
+
+Comment: pip install seems more efficient than conda install. The same situation happened with plotly and cufflins package.
+
+
+	
